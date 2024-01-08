@@ -1,0 +1,40 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: basefile-system
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/leadnews_article?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
+    username: root
+    password: sc19960929
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+
+fdfs:
+  so-timeout: 1500
+  connect-timeout: 600
+  thumb-image:
+    width: 150
+    height: 150
+  tracker-list:
+    - 192.168.3.10.22122
+    - 192.168.3.11.22122
+    - 192.168.3.12.22122
+  pool:
+    max-total: -1
+    max-wait-millis: 5000
+
+connect_timeout: 2
+network_timeout: 30
+charset: UTF-8
+http.tracker_http_port: 8070
+http.anti_steal_token: no
+http.secret_key: WeiyiGee.top
+tracker_server: 192.168.56.10:22122
+tracker_server: 192.168.56.11:22122
+
+

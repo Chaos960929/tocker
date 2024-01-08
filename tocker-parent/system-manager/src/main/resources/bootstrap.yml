@@ -1,0 +1,33 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: system-mamager
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/leadnews_article?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
+    username: root
+    password: sc19960929
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+  kafka:
+    consumer:
+      # ?????????????? ip:port,ip:port
+      bootstrap-servers: 192.168.211.128:9092
+      auto-offset-reset: earliest
+      group-id: article_consumer
+      # ????????
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # ????????
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+# ??Mapper??????XML?????????Mapper?????????????????
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  global-config:
+    # ??????????????worker-id?datacenter-id????????
+    # ??id
+    worker-id: 1
+    # ????id
+    datacenter-id: 1
+  type-aliases-package: com.itheima.article.pojo
